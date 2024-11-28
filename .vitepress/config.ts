@@ -6,16 +6,16 @@ const pageSize = 10
 
 export default defineConfig({
     title: '团子断天玩世界\'s blog',
-    base: '/blog/',
+    base: '/',
     cacheDir: './node_modules/vitepress_cache',
     description: 'vitepress,blog,blog-theme',
     ignoreDeadLinks: true,
     themeConfig: {
         posts: await getPosts(pageSize),
-        website: 'https://github.com/airene/vitepress-blog-pure', //copyright link
+        website: 'https://github.com/tzdtwsj/vitepress-blog', //copyright link
         // 评论的仓库地址
         comment: {
-            repo: 'airene/vitepress-blog-pure',
+            repo: 'tzdtwsj/vitepress-blog',
             themes: 'github-light',
             issueTerm: 'pathname'
         },
@@ -34,7 +34,7 @@ export default defineConfig({
         outline:{
             label:'文章摘要'
         },
-        socialLinks: [{ icon: 'github', link: 'https://github.com/airene/vitepress-blog-pure' }]
+        socialLinks: [{ icon: 'github', link: 'https://github.com/tzdtwsj/vitepress-blog' }]
     } as any,
     srcExclude: ['README.md'], // exclude the README.md , needn't to compiler
 
