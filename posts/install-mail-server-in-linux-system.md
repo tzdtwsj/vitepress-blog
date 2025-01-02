@@ -11,11 +11,13 @@ description: 使用postfix和dovecot在ubuntu 24.04搭建一个邮件系统
 ---
 # 系统版本
 系统版本：ubuntu 24.04
+> [!WARNING]
+> 下面的所有操作均在root用户操作
 
 # 安装软件包
 
 ```bash
-sudo apt install postfix dovecot-core dovecot-imapd dovecot-pop3d
+apt install postfix dovecot-core dovecot-imapd dovecot-pop3d
 ```
 在安装时会让你选择选项，先选择Internet Site，然后让你填邮件域名，填进去你的域名即可，记得添加mx记录
 
@@ -60,7 +62,7 @@ disable_plaintext_auth = no
 mail_location = maildir:~/Maildir
 ```
 
-## 添加用户，为用户设置密码，用户名可改成你自己的
+## 添加用户，为用户设置密码，用户名可改成你自己的，如果你原本就有你自己的账号那可以不用新建
 ```bash
 useradd -m user
 passwd user
