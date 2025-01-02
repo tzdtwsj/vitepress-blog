@@ -29,6 +29,7 @@ sudo apt install postfix dovecot-core dovecot-imapd dovecot-pop3d
 myhostname = domain.com
 
 # 在末尾追加以下内容
+home_mailbox = Maildir/
 smtpd_sasl_auth_enable = yes
 smtpd_sasl_security_options = noanonymous
 smtpd_sasl_local_domain = $myhostname
@@ -39,7 +40,7 @@ smtpd_sasl_path = private/auth
 
 ## /etc/dovecot/10-master.conf
 ```conf
-# 110行，去注释，添加一点语句
+# 110行，先把原来有的去掉注释，然后在里面加上原来没有的
 unix_listener /var/spool/postfix/private/auth {
   mode = 0666
   user = postfix
@@ -51,6 +52,12 @@ unix_listener /var/spool/postfix/private/auth {
 ```conf
 # 10行，去注释，把yes改成no
 disable_plaintext_auth = no
+```
+
+## /etc/dovecot/10-mail.conf
+```conf
+# 30行，改成如下内容
+mail_location = maildir:~/Maildir
 ```
 
 ## 添加用户，为用户设置密码，用户名可改成你自己的
