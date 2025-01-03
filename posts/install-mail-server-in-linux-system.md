@@ -40,7 +40,7 @@ smtpd_sasl_type = dovecot
 smtpd_sasl_path = private/auth
 ```
 
-## /etc/dovecot/10-master.conf
+## /etc/dovecot/conf.d/10-master.conf
 ```conf
 # 110行，先把原来有的去掉注释，然后在里面加上原来没有的
 unix_listener /var/spool/postfix/private/auth {
@@ -50,13 +50,13 @@ unix_listener /var/spool/postfix/private/auth {
 }
 ```
 
-## /etc/dovecot/10-auth.conf
+## /etc/dovecot/conf.d/10-auth.conf
 ```conf
 # 10行，去注释，把yes改成no
 disable_plaintext_auth = no
 ```
 
-## /etc/dovecot/10-mail.conf
+## /etc/dovecot/conf.d/10-mail.conf
 ```conf
 # 30行，改成如下内容
 mail_location = maildir:~/Maildir
@@ -87,7 +87,7 @@ smtpd_tls_cert_file=/etc/ssl/fullchain.pem
 smtpd_tls_key_file=/etc/ssl/privkey.pem
 ```
 
-## /etc/postfix/master.cf
+## /etc/postfix/conf.d/master.cf
 ```conf
 # 追加到文件尾，启用smtps
 smtpd inet n - y - - smtpd -o smtpd_tls_wrappermode=yes
