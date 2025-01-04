@@ -87,10 +87,10 @@ smtpd_tls_cert_file=/etc/ssl/fullchain.pem
 smtpd_tls_key_file=/etc/ssl/privkey.pem
 ```
 
-## /etc/postfix/conf.d/master.cf
+## /etc/postfix/master.cf
 ```conf
 # 追加到文件尾，启用smtps
-smtpd inet n - y - - smtpd -o smtpd_tls_wrappermode=yes
+smtps inet n - y - - smtpd -o smtpd_tls_wrappermode=yes
 ```
 
 ## /etc/dovecot/conf.d/10-ssl.conf
