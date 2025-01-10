@@ -19,7 +19,10 @@ description: 使用postfix和dovecot在ubuntu 24.04搭建一个邮件系统
 ```bash
 apt install postfix dovecot-core dovecot-imapd dovecot-pop3d
 ```
-在安装时会让你选择选项，先选择Internet Site，然后让你填邮件域名，填进去你的域名即可，记得添加mx记录
+> 在安装时会让你选择选项，先选择Internet Site，然后让你填邮件域名，填进去你的域名即可，记得添加mx记录
+
+> [!WARNING]
+> 如果你正在使用wsl安装postfix，有可能会出现`newaliases: fatal: bad string length 0 < 1: mydomain =`，检查main.cf 37行`myhostname =`，看看这行的后面是不是带个点，如果有就删掉这个点，然后用apt install postfix再次安装，然后就安装上了
 
 # 修改配置文件
 
