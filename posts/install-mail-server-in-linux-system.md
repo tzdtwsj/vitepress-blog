@@ -1,5 +1,5 @@
 ---
-date: 2025-1-3
+date: 2025-01-03
 title: 用postfix和dovecot在ubuntu 24.04搭建一个邮件系统
 category: 教程
 tags:
