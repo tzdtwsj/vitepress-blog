@@ -1,3 +1,10 @@
+# 团子断天玩世界's blog
+
+这是tzdtwsj的一个博客仓库，存放着博客的文章
+
+# 原README.md
+---
+
 # vitepress theme blog pure
 
 [Live Demo](https://ti.bi)
